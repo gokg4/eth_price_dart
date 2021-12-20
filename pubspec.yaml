@@ -15,3 +15,4 @@ dev_dependencies:
 dependencies: 
   convert: ^3.0.1
   http: ^0.13.4
+  intl: ^0.17.0

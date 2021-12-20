@@ -2,11 +2,14 @@ import 'dart:convert' as convert;
 
 import 'package:http/http.dart' as http;
 
+import 'package:intl/intl.dart';
+
 void main () async {
     var queryParameters = {
         'vs_currencies': 'inr,usd,eur,gbp',
         'ids': 'ethereum'
     };
+    var now = DateFormat.yMMMd().add_jm().format(DateTime.now());
     var url = Uri.https('api.coingecko.com', '/api/v3/simple/price', queryParameters);
     var response = await http.get(url);
     
@@ -16,7 +19,7 @@ void main () async {
         final usd = jsonResponse['ethereum']?['usd'];
         final eur = jsonResponse['ethereum']?['eur'];
         final gbp = jsonResponse['ethereum']?['gbp'];
-        print('Ethereum Price Today in INR: $inr, USD: $usd, EUR: $eur, GBP: $gbp');        
+        print('Ethereum Price Today($now) in INR: $inr, USD: $usd, EUR: $eur, GBP: $gbp');        
     }   else {
         print('response.statusCode');
     }

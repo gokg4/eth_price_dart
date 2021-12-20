@@ -16,7 +16,7 @@ void main () async {
         final usd = jsonResponse['ethereum']?['usd'];
         final eur = jsonResponse['ethereum']?['eur'];
         final gbp = jsonResponse['ethereum']?['gbp'];
-        print(' Ethereum Price Today in INR: $inr, USD: $usd, EUR: $eur, GBP: $gbp');        
+        print('Ethereum Price Today in INR: $inr, USD: $usd, EUR: $eur, GBP: $gbp');        
     }   else {
         print('response.statusCode');
     }
